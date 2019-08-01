@@ -20,6 +20,7 @@ class ResultadoPesquisaTableViewCell: UITableViewCell {
     
     @IBOutlet weak var autorResultadoPesquisa: UILabel!
     
+    @IBOutlet weak var barraPesquisa: UITextField!
 
     
     
@@ -27,22 +28,25 @@ class ResultadoPesquisaTableViewCell: UITableViewCell {
         guard let pesquisa:String = barraPesquisa.text else {
             return
         }
-        //Fetch books from web
+        
         LivroHandler.fetchFromWeb(pesquisa) { (res) in
             switch (res) {
             case .success(let books):
                 self.books = books
-                
+
                 //Async reload
                 DispatchQueue.main.async {
+
                     self.tableView.reloadData()
                 }
             case .error(let description):
                 print(description)
-               
+
             }
         }
     }
+    
+//    let dataSource: PesquisaTableViewController = PesquisaTableViewController(books: [])
     
     override func awakeFromNib() {
         super.awakeFromNib()

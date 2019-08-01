@@ -438,9 +438,6 @@
                                                 <action selector="barraPesquisa:" destination="GQc-LS-2DB" eventType="editingDidEnd" id="3L4-ni-Lxr"/>
                                             </connections>
                                         </textField>
-                                        <connections>
-                                            <action selector="barraPesquisa:" destination="GQc-LS-2DB" id="Lkv-Ke-Nzq"/>
-                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" style="plain" id="B34-ly-jGW">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Clg-UP-PX6">
@@ -449,6 +446,7 @@
                                             <state key="normal" title="Procurar"/>
                                             <connections>
                                                 <action selector="botaoPesquisa:" destination="GQc-LS-2DB" eventType="touchUpInside" id="Rye-Yf-p46"/>
+                                                <action selector="searchBotaoAct:" destination="P5H-JF-FnF" eventType="touchUpInside" id="ANE-E6-Ztl"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -510,6 +508,10 @@
                     <navigationItem key="navigationItem" id="ALX-n1-4Lq">
                         <nil key="title"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="barraPesquisa" destination="3C2-aM-jH5" id="lNS-3t-o0H"/>
+                        <outlet property="searchBotao" destination="Clg-UP-PX6" id="HTf-UD-46L"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfi-Zb-BWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="GQc-LS-2DB" userLabel="Exit" sceneMemberID="exit"/>

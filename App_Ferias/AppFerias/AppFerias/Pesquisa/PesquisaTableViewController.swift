@@ -11,11 +11,40 @@ import Foundation
 
 class PesquisaTableViewController: UITableViewController {
     
-  public  var books = [Book]()
+    @IBOutlet weak var barraPesquisa: UITextField!
+    
+    public  var books = [Book]()
+    
+    @IBOutlet weak var searchBotao: UIButton!
+    @IBAction func searchBotaoAct(_ sender: Any) {
+        guard let pesquisa:String = self.barraPesquisa.text else {
+            return
+        }
+        LivroHandler.fetchFromWeb(pesquisa) { (res) in
+            switch (res) {
+            case .success(let books):
+                self.books = books
+                //Async reload
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .error(let description):
+                print(description)
+            }
+        }
+
+        
+        
+    }
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Hide keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
     }
 
@@ -39,7 +68,7 @@ class PesquisaTableViewController: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ResultadoPesquisa") as? ResultadoPesquisaTableViewCell {
             var urlString = ""
             if books[indexPath.row].thumbnail != nil {
-                urlString = "\(books[indexPath.row].thumbnail as? URL))"
+                urlString = "\(books[indexPath.row].thumbnail as! URL))"
                 //colocando imagem do livro na imagem da celula da table
                 cell.imagemResultadoPesquisa.imageFromServerURL(urlString: urlString) { (res, err) in
                     if (err != nil) {
@@ -58,41 +87,12 @@ class PesquisaTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+ 
     
-//    func searchBarIsEmpty() -> Bool {
-//        // Returns true if the text is empty or nil
-//        return searchController.searchBar.text?.isEmpty ?? true
-//    }
-//
-//    func filterContentForSearchText(_ searchText: String) {
-//        LivroHandler.fetchFromWeb(searchText) { (res) in
-//            switch (res) {
-//            case .success(let books):
-//                self.books = books
-//                //Async reload
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//
-//                }
-//            case .error(let description):
-//                print(description)
-//
-//
-//            }
-//        }
-//
-//
-//    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //Hide Keyboard
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
-    */
 
 }
 
