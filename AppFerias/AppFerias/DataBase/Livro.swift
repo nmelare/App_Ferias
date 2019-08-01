@@ -9,45 +9,29 @@
 import Foundation
 import UIKit
 
-struct Book: Codable {
+struct Books: Codable {
     var title:String?
     var authors:[String]?
-    var printType:String? //Diz se é Book ou magazine
     var publishedDate:String?
     var description:String?
-    var pageCount:Int?
+    var pageCount:String?
     var language:String?
-    var id:String?
-    var link:URL?
-    var thumbnail:URL? //imagem
+    var image:String? //imagem
 }
 
-extension UIImageView {
-    public func imageFromServerURL(urlString: String, completion: @escaping (String?, Error?) -> Void) {
-        self.image = nil
-        let urlStringNew = urlString.replacingOccurrences(of: " ", with: "%20")
-        URLSession.shared.dataTask(with: NSURL(string: urlStringNew)! as URL, completionHandler: { (data, response, error) -> Void in
-            
-            if error != nil {
-                print(error as Any)
-                completion(nil, error)
-                return
+class Intern : NSObject {
+    static func getAllBooks() -> [Books] {
+        var allBooks: [Books] = []
+        do {
+            if let path = Bundle.main.path(forResource: "DataBase", ofType: ".json", inDirectory: nil) {
+                let url = URL(fileURLWithPath: path)
+                let BooksData = try Data(contentsOf: url)
+                allBooks = try JSONDecoder().decode([Books].self, from: BooksData)
+                return allBooks
             }
-            DispatchQueue.main.async(execute: { () -> Void in
-                let image = UIImage(data: data!)
-//                if ((self.animationImages) != nil) {
-//                    self.animationImages?.removeAll()
-//                }
-                self.image = image
-                completion("1", nil)
-            })
-            
-        }).resume()
-    }
-}
-
-extension String {
-    func replace(string:String, replacement:String) -> String {
-        return self.replacingOccurrences(of: string, with: replacement, options: NSString.CompareOptions.literal, range: nil)
+        } catch {
+            print("Erro")
+        }
+        return allBooks
     }
 }

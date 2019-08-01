@@ -12,6 +12,11 @@ class InfoTotalTableViewCell: UITableViewCell {
 
     @IBOutlet weak var descricaoLivro: UILabel!
     
+    @IBOutlet weak var pagesLivro: UILabel!
+    
+    @IBOutlet weak var publicacaoLivro: UILabel!
+    
+    @IBOutlet weak var linguaLivro: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

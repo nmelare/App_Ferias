@@ -8,13 +8,21 @@
 
 import UIKit
 import Foundation
+import CoreData
 
 class QueroLerTableViewController: UITableViewController {
     
+    var context: NSManagedObjectContext?
+    
+    var books: [Book?] = []
+    var booksJson: [Books] = []
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        navigationItem.title = "Quero Ler"
         
         
 
@@ -27,21 +35,77 @@ class QueroLerTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
+//
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//            let label1 = UILabel()
+//            label1.text = "  Quero Ler"
+//            label1.textColor = #colorLiteral(red: 0.1976624131, green: 0.2988785505, blue: 0.5258377194, alpha: 1)
+//            label1.font = UIFont.boldSystemFont(ofSize: 22.0)
+//            return label1
+//    }
 
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        if section == 0 {
+//            return 30
+//        }
+//        return 0
+//    }
+    
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return books.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        if let cell = tableView.dequeueReusableCell(withIdentifier: "ListaQueroLer") as? ListaQueroLerTableViewCell {
+        cell.imagemLivroQueroLer.image = UIImage(named: books[indexPath.row]?.image ?? "Erro")
+        cell.tituloLivroQueroLer.text = books[indexPath.row]?.title
+        print(books[indexPath.row]?.title)
+        cell.autorLivroQueroLer.text = books[indexPath.row]?.authors
+        
         return cell
     }
         return UITableViewCell()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let context = context {
+            do {
+                let books = try context.fetch(Book.fetchRequest())
+                guard let booksTry = books as? [Book] else {
+                    navigationItem.title = "404"
+                    return
+                }
+                self.books = booksTry
+            }
+            catch {
+                print("Err loading books")
+                return
+            }
+        }
+        else {
+            return
+        }
+        tableView.reloadData()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var bookSelected = books[indexPath.row]
+        
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LivroInfo") as? LivroInfoTableViewController {
+            viewController.book = bookSelected
+            
+            if let navigator = navigationController {
+                navigator.pushViewController(viewController, animated: true)
+            }
+        }
+        
     }
 
     /*
