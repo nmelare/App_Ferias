@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6F014E8722D3A01900279231 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F014E8622D3A01900279231 /* AppDelegate.swift */; };
 		6F014E8C22D3A01900279231 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F014E8A22D3A01900279231 /* Main.storyboard */; };
-		6F014E8F22D3A01900279231 /* AppFerias.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F014E8D22D3A01900279231 /* AppFerias.xcdatamodeld */; };
 		6F014E9122D3A01D00279231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F014E9022D3A01D00279231 /* Assets.xcassets */; };
 		6F014E9422D3A01D00279231 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F014E9222D3A01D00279231 /* LaunchScreen.storyboard */; };
 		6F014E9C22D7B16200279231 /* QueroLerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F014E9B22D7B16200279231 /* QueroLerTableViewController.swift */; };
@@ -17,6 +16,7 @@
 		6F014EA022D7B1BF00279231 /* LidoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F014E9F22D7B1BF00279231 /* LidoTableViewController.swift */; };
 		6F014EA222D7B23B00279231 /* LivroInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F014EA122D7B23B00279231 /* LivroInfoTableViewController.swift */; };
 		6F014EA422D7B35400279231 /* PesquisaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F014EA322D7B35400279231 /* PesquisaTableViewController.swift */; };
+		6F2B517C22F0A66B001A761C /* AppFerias.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 6F2B517A22F0A66B001A761C /* AppFerias.xcdatamodeld */; };
 		6F73FFDC22E80C22008FD7F2 /* ListaQueroLerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F73FFDB22E80C22008FD7F2 /* ListaQueroLerTableViewCell.swift */; };
 		6F73FFDE22E80D37008FD7F2 /* ListaLendoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F73FFDD22E80D37008FD7F2 /* ListaLendoTableViewCell.swift */; };
 		6F73FFE022E80DEF008FD7F2 /* ListaLidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F73FFDF22E80DEF008FD7F2 /* ListaLidoTableViewCell.swift */; };
@@ -24,15 +24,19 @@
 		6F73FFE422E80FE3008FD7F2 /* InfoBotaoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F73FFE322E80FE3008FD7F2 /* InfoBotaoTableViewCell.swift */; };
 		6F73FFE622E81071008FD7F2 /* InfoTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F73FFE522E81071008FD7F2 /* InfoTotalTableViewCell.swift */; };
 		6F73FFE822E81110008FD7F2 /* ResultadoPesquisaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F73FFE722E81110008FD7F2 /* ResultadoPesquisaTableViewCell.swift */; };
-		6F92A39222E8AB0E00BF409C /* LivroHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F92A39122E8AB0E00BF409C /* LivroHandler.swift */; };
 		6F92A39422E8AC9D00BF409C /* Livro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F92A39322E8AC9D00BF409C /* Livro.swift */; };
+		6F9EBD4922F373DA0089DCD7 /* LivroHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9EBD4822F373DA0089DCD7 /* LivroHandler.swift */; };
+		6F9EBD4D22F4AA470089DCD7 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9EBD4B22F4AA470089DCD7 /* Book+CoreDataClass.swift */; };
+		6F9EBD4E22F4AA470089DCD7 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9EBD4C22F4AA470089DCD7 /* Book+CoreDataProperties.swift */; };
+		6F9EBD5022F4CB300089DCD7 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9EBD4F22F4CB300089DCD7 /* Extentions.swift */; };
+		6F9EBD5222F4D7410089DCD7 /* deleteAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9EBD5122F4D7410089DCD7 /* deleteAll.swift */; };
+		6F9EBD5422F4DF000089DCD7 /* findAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9EBD5322F4DF000089DCD7 /* findAll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6F014E8322D3A01900279231 /* AppFerias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFerias.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F014E8622D3A01900279231 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F014E8B22D3A01900279231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6F014E8E22D3A01900279231 /* AppFerias.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppFerias.xcdatamodel; sourceTree = "<group>"; };
 		6F014E9022D3A01D00279231 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F014E9322D3A01D00279231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F014E9522D3A01D00279231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +45,7 @@
 		6F014E9F22D7B1BF00279231 /* LidoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LidoTableViewController.swift; sourceTree = "<group>"; };
 		6F014EA122D7B23B00279231 /* LivroInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivroInfoTableViewController.swift; sourceTree = "<group>"; };
 		6F014EA322D7B35400279231 /* PesquisaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesquisaTableViewController.swift; sourceTree = "<group>"; };
+		6F2B517B22F0A66B001A761C /* AppFerias.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppFerias.xcdatamodel; sourceTree = "<group>"; };
 		6F73FFDB22E80C22008FD7F2 /* ListaQueroLerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaQueroLerTableViewCell.swift; sourceTree = "<group>"; };
 		6F73FFDD22E80D37008FD7F2 /* ListaLendoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaLendoTableViewCell.swift; sourceTree = "<group>"; };
 		6F73FFDF22E80DEF008FD7F2 /* ListaLidoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaLidoTableViewCell.swift; sourceTree = "<group>"; };
@@ -48,8 +53,13 @@
 		6F73FFE322E80FE3008FD7F2 /* InfoBotaoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBotaoTableViewCell.swift; sourceTree = "<group>"; };
 		6F73FFE522E81071008FD7F2 /* InfoTotalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTotalTableViewCell.swift; sourceTree = "<group>"; };
 		6F73FFE722E81110008FD7F2 /* ResultadoPesquisaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultadoPesquisaTableViewCell.swift; sourceTree = "<group>"; };
-		6F92A39122E8AB0E00BF409C /* LivroHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivroHandler.swift; sourceTree = "<group>"; };
 		6F92A39322E8AC9D00BF409C /* Livro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Livro.swift; sourceTree = "<group>"; };
+		6F9EBD4822F373DA0089DCD7 /* LivroHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivroHandler.swift; sourceTree = "<group>"; };
+		6F9EBD4B22F4AA470089DCD7 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6F9EBD4C22F4AA470089DCD7 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6F9EBD4F22F4CB300089DCD7 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		6F9EBD5122F4D7410089DCD7 /* deleteAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteAll.swift; sourceTree = "<group>"; };
+		6F9EBD5322F4DF000089DCD7 /* findAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findAll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +76,9 @@
 		6F014E7A22D3A01900279231 = {
 			isa = PBXGroup;
 			children = (
+				6F2B517A22F0A66B001A761C /* AppFerias.xcdatamodeld */,
+				6F9EBD4B22F4AA470089DCD7 /* Book+CoreDataClass.swift */,
+				6F9EBD4C22F4AA470089DCD7 /* Book+CoreDataProperties.swift */,
 				6F014E8522D3A01900279231 /* AppFerias */,
 				6F014E8422D3A01900279231 /* Products */,
 			);
@@ -93,7 +106,6 @@
 				6F014E8A22D3A01900279231 /* Main.storyboard */,
 				6F014E9222D3A01D00279231 /* LaunchScreen.storyboard */,
 				6F014E9522D3A01D00279231 /* Info.plist */,
-				6F014E8D22D3A01900279231 /* AppFerias.xcdatamodeld */,
 			);
 			path = AppFerias;
 			sourceTree = "<group>";
@@ -148,8 +160,11 @@
 		6F92A39022E8AAA400BF409C /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				6F92A39122E8AB0E00BF409C /* LivroHandler.swift */,
 				6F92A39322E8AC9D00BF409C /* Livro.swift */,
+				6F9EBD4822F373DA0089DCD7 /* LivroHandler.swift */,
+				6F9EBD4F22F4CB300089DCD7 /* Extentions.swift */,
+				6F9EBD5122F4D7410089DCD7 /* deleteAll.swift */,
+				6F9EBD5322F4DF000089DCD7 /* findAll.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -212,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F2B517C22F0A66B001A761C /* AppFerias.xcdatamodeld in Resources */,
 				6F014E9422D3A01D00279231 /* LaunchScreen.storyboard in Resources */,
 				6F014E9122D3A01D00279231 /* Assets.xcassets in Resources */,
 				6F014E8C22D3A01900279231 /* Main.storyboard in Resources */,
@@ -225,21 +241,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F9EBD4E22F4AA470089DCD7 /* Book+CoreDataProperties.swift in Sources */,
 				6F014EA222D7B23B00279231 /* LivroInfoTableViewController.swift in Sources */,
-				6F014E8F22D3A01900279231 /* AppFerias.xcdatamodeld in Sources */,
 				6F92A39422E8AC9D00BF409C /* Livro.swift in Sources */,
+				6F9EBD4D22F4AA470089DCD7 /* Book+CoreDataClass.swift in Sources */,
 				6F014EA422D7B35400279231 /* PesquisaTableViewController.swift in Sources */,
 				6F014E9C22D7B16200279231 /* QueroLerTableViewController.swift in Sources */,
 				6F73FFDC22E80C22008FD7F2 /* ListaQueroLerTableViewCell.swift in Sources */,
 				6F014E8722D3A01900279231 /* AppDelegate.swift in Sources */,
+				6F9EBD5022F4CB300089DCD7 /* Extentions.swift in Sources */,
 				6F73FFE622E81071008FD7F2 /* InfoTotalTableViewCell.swift in Sources */,
+				6F9EBD4922F373DA0089DCD7 /* LivroHandler.swift in Sources */,
 				6F73FFE222E80F62008FD7F2 /* InfoResumoTableViewCell.swift in Sources */,
 				6F73FFE422E80FE3008FD7F2 /* InfoBotaoTableViewCell.swift in Sources */,
+				6F9EBD5222F4D7410089DCD7 /* deleteAll.swift in Sources */,
+				6F9EBD5422F4DF000089DCD7 /* findAll.swift in Sources */,
 				6F73FFDE22E80D37008FD7F2 /* ListaLendoTableViewCell.swift in Sources */,
 				6F73FFE822E81110008FD7F2 /* ResultadoPesquisaTableViewCell.swift in Sources */,
 				6F014E9E22D7B1B300279231 /* LendoTableViewController.swift in Sources */,
 				6F014EA022D7B1BF00279231 /* LidoTableViewController.swift in Sources */,
-				6F92A39222E8AB0E00BF409C /* LivroHandler.swift in Sources */,
 				6F73FFE022E80DEF008FD7F2 /* ListaLidoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,7 +413,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.AppFerias;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QueroLer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,7 +431,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.AppFerias;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QueroLer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -442,13 +462,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6F014E8D22D3A01900279231 /* AppFerias.xcdatamodeld */ = {
+		6F2B517A22F0A66B001A761C /* AppFerias.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6F014E8E22D3A01900279231 /* AppFerias.xcdatamodel */,
+				6F2B517B22F0A66B001A761C /* AppFerias.xcdatamodel */,
 			);
-			currentVersion = 6F014E8E22D3A01900279231 /* AppFerias.xcdatamodel */;
-			path = AppFerias.xcdatamodeld;
+			currentVersion = 6F2B517B22F0A66B001A761C /* AppFerias.xcdatamodel */;
+			name = AppFerias.xcdatamodeld;
+			path = AppFerias/AppFerias.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class LidoTableViewController: UITableViewController {
-
+    
+    var context: NSManagedObjectContext?
+    
+    var books: [Book?] = []
+    var booksJson: [Books] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        navigationItem.title = "Já Li"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,10 +30,10 @@ class LidoTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -35,9 +42,33 @@ class LidoTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ListaLido") as? ListaLidoTableViewCell {
+            cell.imagemLivroLido.image = UIImage(named: books[indexPath.row]?.image ?? "Erro")
+            cell.tituloLivroLido.text = books[indexPath.row]?.title
+            cell.autorLivroLido.text = books[indexPath.row]?.authors
             return cell
         }
         return UITableViewCell()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let context = context {
+            do {
+                let books = try context.fetch(Book.fetchRequest())
+                guard let booksTry = books as? [Book] else {
+                    navigationItem.title = "404"
+                    return
+                }
+                self.books = booksTry
+            }
+            catch {
+                print("Err loading books")
+                return
+            }
+        }
+        else {
+            return
+        }
+        tableView.reloadData()
     }
 
     /*

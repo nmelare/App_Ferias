@@ -10,16 +10,13 @@ import UIKit
 import UserNotifications
 
 class InfoBotaoTableViewCell: UITableViewCell {
+    
 
     @IBOutlet weak var botaoAdicionar: UIButton!
     
+    
     @IBAction func botaoSabonete(_ sender: Any) {
         
-        
-//        if botaoAdicionar .isSelected {
-//        mudar info do botao (talvez fazer um picker)
-//        }
-    
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.getNotificationSettings { (settings) in
             if settings.authorizationStatus == .authorized {
@@ -39,19 +36,16 @@ class InfoBotaoTableViewCell: UITableViewCell {
                 center.add(request) { (error : Error?) in
                     if let error = error {
                         print(error.localizedDescription)
+                        
+                        
+                        
                     }
                 }
                 
             }
         }
-    
-    
-    
     }
-    
-    
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -62,5 +56,4 @@ class InfoBotaoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

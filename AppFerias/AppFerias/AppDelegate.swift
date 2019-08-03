@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Notifications not allowed by user")
             }
         }
+        
+//        deleteAll("Book")
         return true
     }
 

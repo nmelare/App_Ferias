@@ -2,7 +2,7 @@
 //  LivroHandler.swift
 //  AppFerias
 //
-//  Created by Nathalia Melare on 24/07/19.
+//  Created by Nathalia Melare on 01/08/19.
 //  Copyright © 2019 Nathalia Melare. All rights reserved.
 //
 
@@ -22,10 +22,10 @@ class LivroHandler {
         //let serverURL = "http://192.168.1.58:3000"
         
         //tira os espacos e coloca tracos
-       let pesquisaFormatada = pesquisa.replace(string: " ", replacement: "-")
-
+        let pesquisaFormatada = pesquisa.replace(string: " ", replacement: "-")
+        
         let BASE_URL:String = "\(serverURL)/books/search/\(pesquisaFormatada)"
-
+        
         guard let url = URL(string: BASE_URL) else {
             completion(TaskLoadResponse.error(description: "URL não inicializada"))
             return;
