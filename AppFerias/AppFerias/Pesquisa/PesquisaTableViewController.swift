@@ -13,7 +13,7 @@ class PesquisaTableViewController: UITableViewController {
     
     @IBOutlet weak var barraPesquisa: UITextField!
     
-    public  var books = [Book]()
+    public  var books = [Books]()
     
     @IBOutlet weak var searchBotao: UIButton!
     @IBAction func searchBotaoAct(_ sender: Any) {
@@ -32,11 +32,7 @@ class PesquisaTableViewController: UITableViewController {
                 print(description)
             }
         }
-
-        
-        
     }
-    
     
     
     override func viewDidLoad() {
@@ -45,7 +41,7 @@ class PesquisaTableViewController: UITableViewController {
         // Hide keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
+        barraPesquisa.placeholder = "Pesquise seu livro"
     }
 
     // MARK: - Table view data source

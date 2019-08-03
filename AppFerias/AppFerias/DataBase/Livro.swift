@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Book: Codable {
+struct Books: Codable {
     var title:String?
     var authors:[String]?
     var printType:String? //Diz se é Book ou magazine

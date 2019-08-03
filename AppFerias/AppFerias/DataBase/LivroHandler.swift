@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum TaskLoadResponse: Error {
-    case success(books: [Book])
+    case success(books: [Books])
     case error(description: String)
 }
 
@@ -38,7 +38,7 @@ class LivroHandler {
                 return
             }
             
-            if let books = try? JSONDecoder().decode([Book].self, from: jsonData) {
+            if let books = try? JSONDecoder().decode([Books].self, from: jsonData) {
                 completion(TaskLoadResponse.success(books: books))
             } else {
                 completion(TaskLoadResponse.error(description: "Error to convert data to [Task]"))

@@ -10,7 +10,7 @@ import UIKit
 
 class LivroInfoTableViewController: UITableViewController {
 
-var books = [Book]()
+var books = [Books]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

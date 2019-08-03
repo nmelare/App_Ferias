@@ -10,7 +10,7 @@ import UIKit
 
 class ResultadoPesquisaTableViewCell: UITableViewCell {
     
-    var books = [Book]()
+    var books = [Books]()
     
     var tableView: UITableView!
 
