@@ -46,13 +46,6 @@ class PesquisaTableViewController: UITableViewController {
         barraPesquisa.placeholder = "Pesquise seu livro"
     }
 
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return books.count
@@ -81,26 +74,8 @@ class PesquisaTableViewController: UITableViewController {
     
    
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        var bookSelected = books[indexPath.row]
-
-        
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {    
         performSegue(withIdentifier: "verDetalhe", sender: nil)
-//        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LivroInfo") as? LivroInfoTableViewController {
-//            viewController.booksInfo = bookSelected
-//
-////            viewController.book?.image = bookSelected.thumbnail
-////            viewController.book?.authors = bookSelected.authors![0]
-////            viewController.book?.descriptions = bookSelected.description
-////            viewController.book?.pageCount = bookSelected.pageCount
-//            viewController.book?.publishedDate = bookSelected.publishedDate
-//            viewController.book?.title = bookSelected.title
-//
-//            if let navigator = navigationController {
-//                navigator.pushViewController(viewController, animated: true)
-//            }
-//        }
-//
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

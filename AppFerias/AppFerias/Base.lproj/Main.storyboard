@@ -92,7 +92,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="3He-2Q-igI"/>
                     <connections>
-                        <segue destination="gsf-dw-iuZ" kind="show" identifier="addFavoritos" id="B3d-Rq-jcL"/>
+                        <segue destination="gsf-dw-iuZ" kind="show" identifier="addQueroLer" id="B3d-Rq-jcL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIK-Zo-jhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -204,6 +204,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="tCq-aA-0FB"/>
+                    <connections>
+                        <segue destination="gsf-dw-iuZ" kind="show" identifier="addLendo" id="GVg-Lw-n47"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLD-HW-oHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -499,6 +502,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Ytj-qk-6N7"/>
+                    <connections>
+                        <segue destination="gsf-dw-iuZ" kind="show" identifier="addLido" id="g5X-0B-GJx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0T3-jR-N1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -537,7 +543,7 @@
                             <items>
                                 <navigationItem id="J5p-GG-cAh">
                                     <nil key="title"/>
-                                    <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="oex-wg-SUn">
+                                    <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="oex-wg-SUn">
                                         <rect key="frame" x="12" y="7" width="284" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
@@ -630,6 +636,6 @@
         <image name="QueroLer" width="21" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="B3d-Rq-jcL"/>
+        <segue reference="g5X-0B-GJx"/>
     </inferredMetricsTieBreakers>
 </document>

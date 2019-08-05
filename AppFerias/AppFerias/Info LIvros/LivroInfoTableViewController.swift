@@ -20,10 +20,12 @@ class LivroInfoTableViewController: UITableViewController {
     var context: NSManagedObjectContext?
     var book:Book?
     var delegate: LivroInfoTableViewControllerDelegate?
-    var botaoSalvar: Bool = true
+    var botaoSalvar = true
     var bookExiste = false
     var toVindoDaPesquisa = false
-    
+    var authorExiste = false
+    var toVindoQueroLer = false
+    var toVindoLendo = false
     
     @IBAction func botaoAdicionar(_ sender: Any) {
         
@@ -48,6 +50,10 @@ class LivroInfoTableViewController: UITableViewController {
         let authors = booksInfo!.authors!
         if let book:Books = (findByTitle(title)) {
             bookExiste = true
+        }
+        
+        if let book:Books = (findByAuthors(authors[0])) {
+            authorExiste = true
         }
 
     }
@@ -135,8 +141,9 @@ class LivroInfoTableViewController: UITableViewController {
         if indexPath.section == 1 {
             if let cell1 = tableView.dequeueReusableCell(withIdentifier: "InfoBotao") as? InfoBotaoTableViewCell {
         cell1.botaoAdicionar.layer.cornerRadius = 10
-                if bookExiste && toVindoDaPesquisa {
+                if bookExiste && authorExiste && toVindoDaPesquisa {
                     cell1.botaoAdicionar.isEnabled = false
+//                    cell1.botaoAdicionar.titleLabel?.text = "Adicionar a Lendo"
                 }
                 return cell1
             }

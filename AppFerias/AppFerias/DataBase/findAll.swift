@@ -28,7 +28,6 @@ func findAllBooks() -> [Books]?{
             let publishedDate = data.value(forKey: "publishedDate") as? String ?? ""
             let description = data.value(forKey: "descriptions") as? String  ?? ""
             let pageCount = data.value(forKey: "pageCount") as? Int ?? 0
-            //            let language = data.value(forKey: "language") as? String
             let thumbnail = data.value(forKey: "image") as? String ?? ""
             
             
