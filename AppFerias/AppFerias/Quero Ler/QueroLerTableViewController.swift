@@ -68,8 +68,8 @@ class QueroLerTableViewController: UITableViewController {
             if segue.identifier! == "addQueroLer" {
                 
                 (segue.destination as! LivroInfoTableViewController).booksInfo = books[(tableView.indexPathForSelectedRow?.row)!]
-                (segue.destination as! LivroInfoTableViewController).toVindoDaPesquisa = true
-//                (segue.destination as! LivroInfoTableViewController).toVindoQueroLer = true
+//                (segue.destination as! LivroInfoTableViewController).toVindoDaPesquisa = true
+                (segue.destination as! LivroInfoTableViewController).toVindoQueroLer = true
             }
         }
         

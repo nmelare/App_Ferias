@@ -65,7 +65,7 @@ class LidoTableViewController: UITableViewController {
             if segue.identifier! == "addLido" {
                 
                 (segue.destination as! LivroInfoTableViewController).booksInfo = books[(tableView.indexPathForSelectedRow?.row)!]
-                (segue.destination as! LivroInfoTableViewController).toVindoDaPesquisa = true
+                (segue.destination as! LivroInfoTableViewController).toVindoLido = true
             }
         }
     }

@@ -26,6 +26,7 @@ class LivroInfoTableViewController: UITableViewController {
     var authorExiste = false
     var toVindoQueroLer = false
     var toVindoLendo = false
+    var toVindoLido = false
     
     @IBAction func botaoAdicionar(_ sender: Any) {
         
@@ -143,7 +144,12 @@ class LivroInfoTableViewController: UITableViewController {
         cell1.botaoAdicionar.layer.cornerRadius = 10
                 if bookExiste && authorExiste && toVindoDaPesquisa {
                     cell1.botaoAdicionar.isEnabled = false
-//                    cell1.botaoAdicionar.titleLabel?.text = "Adicionar a Lendo"
+                } else if bookExiste && authorExiste && toVindoQueroLer {
+                    cell1.botaoAdicionar.setTitle("Adicionar a Lendo", for: .normal)
+                } else if bookExiste && authorExiste && toVindoLendo {
+                    cell1.botaoAdicionar.setTitle("Adicionar a Lido", for: .normal)
+                } else if bookExiste && authorExiste && toVindoLido {
+                    cell1.botaoAdicionar.setTitle("Adicionar a Quero Ler", for: .normal)
                 }
                 return cell1
             }
